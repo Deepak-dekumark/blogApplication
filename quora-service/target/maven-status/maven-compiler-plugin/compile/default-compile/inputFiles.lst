@@ -8,6 +8,9 @@ C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\common\ErrorCode.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\common\UnexpectedException.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\ServiceConfiguration.java
+C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\entity\UserEntity.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\exception\SignOutRestrictedException.java
+C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\dao\UserDao.java
+C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\business\SignupBusinessService.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\exception\SignUpRestrictedException.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\exception\AnswerNotFoundException.java

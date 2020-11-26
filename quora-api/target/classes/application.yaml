@@ -16,7 +16,9 @@ spring:
 
   jpa:
     properties:
+      show-sql: true
       hibernate:
+        default_schema: quora
         temp:
           use_jdbc_metadata_defaults: false
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
