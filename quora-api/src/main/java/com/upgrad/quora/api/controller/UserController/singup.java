@@ -1,4 +1,4 @@
-package com.upgrad.quora.api.controller;
+package com.upgrad.quora.api.controller.UserController;
 
 
 import com.upgrad.quora.api.model.SignupUserRequest;
@@ -18,12 +18,12 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/")
-public class SignUpController {
+public class singup {
 
     @Autowired
     SignupBusinessService signupBusinessService;
 
-    @RequestMapping(method= RequestMethod.POST,path="/signup",consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,produces =MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method= RequestMethod.POST,path="/user/signup",consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,produces =MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<SignupUserResponse> signup(final SignupUserRequest signupUserRequest) throws SignUpRestrictedException {
 
         if(signupBusinessService.getUser(signupUserRequest.getUserName())!=null)

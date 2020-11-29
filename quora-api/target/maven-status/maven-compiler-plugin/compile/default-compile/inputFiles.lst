@@ -4,6 +4,7 @@ C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\gener
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\com\upgrad\quora\api\model\QuestionDeleteResponse.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\com\upgrad\quora\api\model\UserDetailsResponse.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\com\upgrad\quora\api\model\SignoutResponse.java
+C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\src\main\java\com\upgrad\quora\api\controller\UserController\singup.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\com\upgrad\quora\api\model\SignupUserResponse.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\io\swagger\configuration\HomeController.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\io\swagger\api\ApiException.java
@@ -25,7 +26,7 @@ C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\gener
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\com\upgrad\quora\api\model\AnswerEditResponse.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\com\upgrad\quora\api\model\SigninResponse.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\io\swagger\api\NotFoundException.java
-C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\src\main\java\com\upgrad\quora\api\controller\SignUpController.java
+C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\src\main\java\com\upgrad\quora\api\controller\UserController\signin.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\com\upgrad\quora\api\model\SignupUserRequest.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\src\main\java\com\upgrad\quora\api\exception\RestExceptionHandler.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\io\swagger\RFC3339DateFormat.java

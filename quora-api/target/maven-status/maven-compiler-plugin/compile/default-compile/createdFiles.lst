@@ -9,12 +9,13 @@ com\upgrad\quora\api\model\ErrorResponse.class
 com\upgrad\quora\api\model\QuestionDetailsResponse.class
 com\upgrad\quora\api\model\SigninResponse.class
 com\upgrad\quora\api\model\QuestionRequest.class
+com\upgrad\quora\api\controller\UserController\signin.class
 com\upgrad\quora\api\model\AnswerEditRequest.class
+com\upgrad\quora\api\controller\UserController\singup.class
 com\upgrad\quora\api\model\AnswerEditResponse.class
 com\upgrad\quora\api\model\SignupUserResponse.class
 io\swagger\Swagger2SpringBoot.class
 com\upgrad\quora\api\model\SignupUserRequest.class
-com\upgrad\quora\api\controller\SignUpController.class
 io\swagger\api\ApiOriginFilter.class
 io\swagger\Swagger2SpringBoot$ExitException.class
 com\upgrad\quora\api\exception\RestExceptionHandler.class

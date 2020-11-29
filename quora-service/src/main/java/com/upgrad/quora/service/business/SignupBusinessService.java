@@ -19,17 +19,17 @@ public class SignupBusinessService {
     public UserEntity createUser(UserEntity userEntity){
       String password=userEntity.getPassword();
       String [] encryptedText=cryptographyProvider.encrypt(password);
-      userEntity.setPassword(encryptedText[0]);
-      userEntity.setSalt(encryptedText[1]);
+      userEntity.setPassword(encryptedText[1]);
+      userEntity.setSalt(encryptedText[0]);
       return userDao.createUser(userEntity);
      }
 
-       public UserEntity getUser(final String userName){
-        return userDao.getUser(userName);
+     public UserEntity getUser(final String userName){
+        return userDao.getUserByUserName(userName);
        }
 
     public UserEntity getEmail(final String email){
-        return userDao.getUser(email);
+        return userDao.getUserByEmail(email);
     }
 
 }
