@@ -27,8 +27,8 @@ public class AnswerDao {
         }
     }
 
-    public void updateAnswer(final AnswerEntity answerEntity) {
-        entityManager.merge(answerEntity);
-
+    public AnswerEntity updateAnswer(final AnswerEntity updatedAnswerEntity) {
+        entityManager.merge(updatedAnswerEntity);
+       return updatedAnswerEntity;
     }
 }
