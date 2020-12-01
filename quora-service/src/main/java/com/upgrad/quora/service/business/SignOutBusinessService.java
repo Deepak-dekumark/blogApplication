@@ -6,6 +6,8 @@ import com.upgrad.quora.service.entity.UserEntity;
 import com.upgrad.quora.service.exception.SignOutRestrictedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.ZonedDateTime;
 
@@ -14,6 +16,7 @@ public class SignOutBuisnessService {
 
     @Autowired
     UserDao userDao;
+    @Transactional(propagation = Propagation.REQUIRED)
     public UserAuthTokenEntity getUserAuthToken(final String authorization) throws SignOutRestrictedException {
         UserAuthTokenEntity userAuthToken =userDao.getUserAuthToken(authorization);
         if(userAuthToken==null)
@@ -22,6 +25,8 @@ public class SignOutBuisnessService {
             return userAuthToken;
 
     }
+
+    @Transactional(propagation = Propagation.REQUIRED)
     public void updateAuthToken(final UserAuthTokenEntity userAuthToken){
 
         UserEntity signedUser= userAuthToken.getUser();
