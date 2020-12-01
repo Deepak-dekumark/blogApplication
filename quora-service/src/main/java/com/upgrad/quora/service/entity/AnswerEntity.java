@@ -1,5 +1,8 @@
 package com.upgrad.quora.service.entity;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.time.ZonedDateTime;
@@ -29,9 +32,12 @@ public class AnswerEntity {
     @Column(name="DATE")
     private ZonedDateTime date;
 
+    @ManyToOne
     @JoinColumn(name="USER_ID")
     private UserEntity user;
 
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name="QUESTION_ID")
     private QuestionEntity question;
 
