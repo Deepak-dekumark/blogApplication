@@ -1,14 +1,17 @@
 package com.upgrad.quora.service.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.time.ZonedDateTime;
 
 @Entity
 @Table(name="answer",schema = "quora")
+@NamedQueries(
+        {
+                @NamedQuery(name="getAnswerByUUID",query = "select a from Answer a where a.uuid=:uuid")
+
+        }
+)
 public class AnswerEntity {
 
     @Column(name="ANSWER_ID")
