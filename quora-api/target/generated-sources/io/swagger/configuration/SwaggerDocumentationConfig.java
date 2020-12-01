@@ -17,8 +17,8 @@ public class SwaggerDocumentationConfig {
 
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("Answer API")
-            .description("API of Answer Services")
+            .title("AnswerEntity API")
+            .description("API of AnswerEntity Services")
             .license("")
             .licenseUrl("http://unlicense.org")
             .termsOfServiceUrl("")

@@ -73,10 +73,10 @@ public class AnswerDetailsResponse   {
   }
 
   /**
-   * Answer content
+   * AnswerEntity content
    * @return answerContent
   **/
-  @ApiModelProperty(required = true, value = "Answer content")
+  @ApiModelProperty(required = true, value = "AnswerEntity content")
   @NotNull
 
 

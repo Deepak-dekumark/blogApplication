@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.ZonedDateTime;
 
 @Service
-public class SignOutBuisnessService {
+public class SignOutBusinessService {
 
     @Autowired
     UserDao userDao;

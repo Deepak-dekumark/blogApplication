@@ -16,7 +16,7 @@ public class SignupBusinessService {
     PasswordCryptographyProvider cryptographyProvider;
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public UserEntity createUser(UserEntity userEntity){
+    public UserEntity signup(UserEntity userEntity){
       String password=userEntity.getPassword();
       String [] encryptedText=cryptographyProvider.encrypt(password);
       userEntity.setPassword(encryptedText[1]);
@@ -24,11 +24,11 @@ public class SignupBusinessService {
       return userDao.createUser(userEntity);
      }
 
-     public UserEntity getUser(final String userName){
+     public UserEntity getUserByUserName(final String userName){
         return userDao.getUserByUserName(userName);
        }
 
-    public UserEntity getEmail(final String email){
+    public UserEntity getUserByEmail(final String email){
         return userDao.getUserByEmail(email);
     }
 
