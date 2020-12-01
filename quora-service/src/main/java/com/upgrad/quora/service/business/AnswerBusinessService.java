@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.ZonedDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -110,5 +111,31 @@ public class AnswerBusinessService {
     }
 
 
+    @Transactional(propagation = Propagation.REQUIRED)
+    public List<AnswerEntity>getAllAnswersToQuestion(final String question_uuid,final String authorisation) throws AuthorizationFailedException, InvalidQuestionException {
 
+        UserAuthTokenEntity userAuthTokenEntity = userDao.getUserAuthToken(authorisation);
+        if (userAuthTokenEntity == null) {
+            throw new AuthorizationFailedException("ATHR-001", "User has not signed in.");
+        } else if (userAuthTokenEntity.getLogoutAt() != null || userAuthTokenEntity.getExpiresAt()
+                .isAfter(ZonedDateTime.now())) {
+            throw new AuthorizationFailedException("ATHR-002",
+                    "User is signed out.Sign in first to get the answers");
+        }
+
+        QuestionEntity question = questionDao.getQuestionByuuid(question_uuid);
+        if (question == null)
+            throw new InvalidQuestionException("QUES-001", "The question entered is invalid");
+
+         List<AnswerEntity> getAllAnswers=answerDao.getAllAnswersToQuestion(question_uuid);
+         return getAllAnswers;
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public QuestionEntity getQuestion(final String question_uuid) throws InvalidQuestionException {
+        QuestionEntity question = questionDao.getQuestionByuuid(question_uuid);
+        if (question == null)
+            throw new InvalidQuestionException("QUES-001", "The question entered is invalid");
+        return question;
+    }
 }

@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * AnswerDetailsResponse
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-27T20:00:23.134+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-12-01T11:22:31.052+05:30")
 
 public class AnswerDetailsResponse   {
   @JsonProperty("id")
@@ -73,10 +73,10 @@ public class AnswerDetailsResponse   {
   }
 
   /**
-   * AnswerEntity content
+   * Answer content
    * @return answerContent
   **/
-  @ApiModelProperty(required = true, value = "AnswerEntity content")
+  @ApiModelProperty(required = true, value = "Answer content")
   @NotNull
 
 

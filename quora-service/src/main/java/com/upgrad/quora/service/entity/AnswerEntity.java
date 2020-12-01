@@ -8,7 +8,8 @@ import java.time.ZonedDateTime;
 @Table(name="answer",schema = "quora")
 @NamedQueries(
         {
-                @NamedQuery(name="getAnswerByUUID",query = "select a from Answer a where a.uuid=:uuid")
+                @NamedQuery(name="getAnswerByUUID",query = "select a from Answer a where a.uuid=:uuid"),
+                @NamedQuery(name="getAllAnswersToQuestion",query = "select a from Answer a where a.question_id=:question_id")
 
         }
 )

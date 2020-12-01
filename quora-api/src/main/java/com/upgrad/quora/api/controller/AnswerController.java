@@ -3,6 +3,7 @@ package com.upgrad.quora.api.controller;
 import com.upgrad.quora.api.model.*;
 import com.upgrad.quora.service.business.AnswerBusinessService;
 import com.upgrad.quora.service.entity.AnswerEntity;
+import com.upgrad.quora.service.entity.QuestionEntity;
 import com.upgrad.quora.service.exception.AnswerNotFoundException;
 import com.upgrad.quora.service.exception.AuthorizationFailedException;
 import com.upgrad.quora.service.exception.InvalidQuestionException;
@@ -11,6 +12,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/")
@@ -41,6 +45,16 @@ public class AnswerController {
         return new ResponseEntity<AnswerDeleteResponse>(answerDeleteResponse, HttpStatus.OK);
     }
 
+    @RequestMapping(method=RequestMethod.GET,value="answer/all/{questionId}",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<AnswerDetailsResponse> getAllAnswersToQuestion(@PathVariable("questionId") final String question_uuid,final String authorisation) throws AuthorizationFailedException, InvalidQuestionException {
+    List<AnswerEntity> getAllAnswers=answerBusinessService.getAllAnswersToQuestion(question_uuid,authorisation);
+    QuestionEntity question=answerBusinessService.getQuestion(question_uuid);
+    List<AnswerDetailsResponse> answersToQuestion=new ArrayList<>();
+    for(AnswerEntity answerEntity:getAllAnswers){
+        answersToQuestion.add(new AnswerDetailsResponse().id(answerEntity.getUuid()).
+                questionContent(question.getUuid()).answerContent(answerEntity.getAns()));
+    }
+    }
 
 }
 
