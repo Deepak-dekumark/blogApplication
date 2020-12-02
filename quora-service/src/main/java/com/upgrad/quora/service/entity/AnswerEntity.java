@@ -11,14 +11,16 @@ import java.time.ZonedDateTime;
 @Table(name="answer",schema = "quora")
 @NamedQueries(
         {
-                @NamedQuery(name="getAnswerByUUID",query = "select a from Answer a where a.uuid=:uuid"),
-                @NamedQuery(name="getAllAnswersToQuestion",query = "select a from Answer a where a.question_id=:question_id")
+                @NamedQuery(name="getAnswerByUUID",query = "select a from AnswerEntity a where a.uuid=:uuid"),
+                @NamedQuery(name="getAllAnswersToQuestion",query = "select a from AnswerEntity a JOIN a.question q where question_uuid=:question_uuid")
 
         }
 )
 public class AnswerEntity {
 
+    @Id
     @Column(name="ANSWER_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "UUID")
