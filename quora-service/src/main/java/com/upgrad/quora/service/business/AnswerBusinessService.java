@@ -101,7 +101,7 @@ public class AnswerBusinessService {
         if (answerToBeDeleted == null)
             throw new AnswerNotFoundException("ANS-001", "Entered answer uuid does not exist");
 
-        String loggedInUserUuid = userAuthTokenEntity.getUuid();
+        String loggedInUserUuid = userAuthTokenEntity.getUser().getUuid();
         String loggedInUserRole=userAuthTokenEntity.getUser().getRole();
 
         if(answerToBeDeleted.getUser().getUuid()!=loggedInUserUuid&&loggedInUserRole.equals("nonadmin"))
