@@ -20,7 +20,7 @@ import java.time.ZonedDateTime;
 public class AnswerEntity implements Serializable {
 
     @Id
-    @Column(name="ANSWER_ID")
+    @Column(name="ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

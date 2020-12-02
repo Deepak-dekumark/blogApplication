@@ -15,9 +15,10 @@ spring:
     password: postgres
 
   jpa:
+    show-sql: true
     properties:
-      show-sql: true
       hibernate:
+        format_sql: true
         default_schema: quora
         temp:
           use_jdbc_metadata_defaults: false
