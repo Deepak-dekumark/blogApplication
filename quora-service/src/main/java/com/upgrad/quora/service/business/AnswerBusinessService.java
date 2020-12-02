@@ -75,10 +75,11 @@ public class AnswerBusinessService {
         if (answerToBeEdited == null)
             throw new AnswerNotFoundException("ANS-001", "Entered answer uuid does not exist");
 
-        String userUuid = userAuthTokenEntity.getUuid();
+        String userUuid = userAuthTokenEntity.getUser().getUuid();
 
         if (answerToBeEdited.getUser().getUuid() != userUuid)
             throw new AuthorizationFailedException("ATHR-003", "Only the answer owner can edit the answer");
+        else
         answerToBeEdited.setAns(content);
         return answerDao.updateAnswer(answerToBeEdited);
 

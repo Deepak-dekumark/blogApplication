@@ -20,7 +20,7 @@ public class RestExceptionHandler {
     @ExceptionHandler(AuthenticationFailedException.class)
     public ResponseEntity<ErrorResponse> authenticationFailedException(AuthenticationFailedException exe, WebRequest request) {
         return new ResponseEntity<ErrorResponse>(
-                new ErrorResponse().code(exe.getCode()).message(exe.getErrorMessage()), HttpStatus.UNAUTHORIZED
+                new ErrorResponse().code(exe.getCode()).message(exe.getErrorMessage()), HttpStatus.FORBIDDEN
         );
     }
 
