@@ -19,7 +19,7 @@ public class QuestionDao {
 
     public QuestionEntity getQuestionByuuid(final String uuid) {
         try {
-            return entityManager.createQuery("getQuestionByUUID", QuestionEntity.class).setParameter("uuid", uuid).getSingleResult();
+            return entityManager.createNamedQuery("getQuestionByUUID", QuestionEntity.class).setParameter("uuid", uuid).getSingleResult();
         } catch (NoResultException nre) {
             return null;
         }

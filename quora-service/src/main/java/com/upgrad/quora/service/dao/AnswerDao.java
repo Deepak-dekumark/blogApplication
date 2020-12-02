@@ -21,7 +21,7 @@ public class AnswerDao {
 
     public AnswerEntity getAnswerByUuid(final String uuid) {
         try {
-            return entityManager.createQuery("getAnswerByUUID", AnswerEntity.class).setParameter("uuid", uuid).getSingleResult();
+            return entityManager.createNamedQuery("getAnswerByUUID", AnswerEntity.class).setParameter("uuid", uuid).getSingleResult();
         } catch (NoResultException nre) {
             return null;
 
@@ -39,6 +39,6 @@ public class AnswerDao {
     }
 
     public List<AnswerEntity> getAllAnswersToQuestion(final String question_id){
-        return entityManager.createQuery("getAllAnswersToQuestion",AnswerEntity.class).setParameter("question_uuid",question_id).getResultList();
+        return entityManager.createNamedQuery("getAllAnswersToQuestion",AnswerEntity.class).setParameter("question_uuid",question_id).getResultList();
     }
 }

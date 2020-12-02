@@ -5,6 +5,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.ZonedDateTime;
 
 @Entity
@@ -16,7 +17,7 @@ import java.time.ZonedDateTime;
 
         }
 )
-public class AnswerEntity {
+public class AnswerEntity implements Serializable {
 
     @Id
     @Column(name="ANSWER_ID")
