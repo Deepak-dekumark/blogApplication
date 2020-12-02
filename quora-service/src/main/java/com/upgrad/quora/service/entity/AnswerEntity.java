@@ -13,7 +13,7 @@ import java.time.ZonedDateTime;
 @NamedQueries(
         {
                 @NamedQuery(name="getAnswerByUUID",query = "select a from AnswerEntity a where a.uuid=:uuid"),
-                @NamedQuery(name="getAllAnswersToQuestion",query = "select a from AnswerEntity a JOIN a.question q where question_uuid=:question_uuid")
+                @NamedQuery(name="getAllAnswersToQuestion",query = "select a from AnswerEntity a where a.question=(select q from QuestionEntity q where q.uuid=:uuid)")
 
         }
 )
@@ -35,11 +35,11 @@ public class AnswerEntity implements Serializable {
     @Column(name="DATE")
     private ZonedDateTime date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="USER_ID")
     private UserEntity user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name="QUESTION_ID")
     private QuestionEntity question;
