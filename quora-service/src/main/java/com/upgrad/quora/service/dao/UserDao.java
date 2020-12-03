@@ -53,4 +53,21 @@ public class UserDao {
 
     }
 
+    public UserEntity userDelete(final String userUuid) {
+        UserEntity userEntity = getUserByUuid(userUuid);
+        if (userEntity != null) {
+            entityManager.remove(userEntity);
+        }
+        return userEntity;
+    }
+
+    public UserEntity getUserByUuid(final String userUuid) {
+        try {
+            return entityManager.createNamedQuery("userByUuid", UserEntity.class).setParameter("uuid", userUuid)
+                    .getSingleResult();
+        } catch (NoResultException nre) {
+            return null;
+        }
+    }
+
 }

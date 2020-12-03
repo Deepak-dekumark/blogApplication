@@ -43,19 +43,19 @@ public class AnswerBusinessService {
         }
 
         QuestionEntity question = questionDao.getQuestionByuuid(uuid);
-        if (question == null)
+        if (question == null) {
             throw new InvalidQuestionException("QUES-001", "The question entered is invalid");
+        } else {
+            AnswerEntity answer = new AnswerEntity();
+            answer.setUuid(UUID.randomUUID().toString());
+            answer.setDate(ZonedDateTime.now());
+            answer.setQuestion(question);
+            answer.setAns(content);
+            answer.setUser(userAuthTokenEntity.getUser());
 
-
-        AnswerEntity answer = new AnswerEntity();
-        answer.setUuid(UUID.randomUUID().toString());
-        answer.setDate(ZonedDateTime.now());
-        answer.setQuestion(question);
-        answer.setAns(content);
-        answer.setUser(userAuthTokenEntity.getUser());
-
-        answerDao.createAnswer(answer);
-        return answer;
+            answerDao.createAnswer(answer);
+            return answer;
+        }
     }
 
 
@@ -80,13 +80,13 @@ public class AnswerBusinessService {
         if (answerToBeEdited.getUser().getUuid() != userUuid)
             throw new AuthorizationFailedException("ATHR-003", "Only the answer owner can edit the answer");
         else
-        answerToBeEdited.setAns(content);
+            answerToBeEdited.setAns(content);
         return answerDao.updateAnswer(answerToBeEdited);
 
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public AnswerEntity deleteAnswer(final String answerUuid,final String authorisation) throws AuthorizationFailedException, AnswerNotFoundException {
+    public AnswerEntity deleteAnswer(final String answerUuid, final String authorisation) throws AuthorizationFailedException, AnswerNotFoundException {
 
         UserAuthTokenEntity userAuthTokenEntity = userDao.getUserAuthToken(authorisation);
         if (userAuthTokenEntity == null) {
@@ -102,17 +102,17 @@ public class AnswerBusinessService {
             throw new AnswerNotFoundException("ANS-001", "Entered answer uuid does not exist");
 
         String loggedInUserUuid = userAuthTokenEntity.getUser().getUuid();
-        String loggedInUserRole=userAuthTokenEntity.getUser().getRole();
+        String loggedInUserRole = userAuthTokenEntity.getUser().getRole();
 
-        if(answerToBeDeleted.getUser().getUuid()!=loggedInUserUuid&&loggedInUserRole.equals("nonadmin"))
-             throw new AuthorizationFailedException("ATHR-003","Only the answer owner or admin can delete the answer");
+        if (answerToBeDeleted.getUser().getUuid() != loggedInUserUuid && loggedInUserRole.equals("nonadmin"))
+            throw new AuthorizationFailedException("ATHR-003", "Only the answer owner or admin can delete the answer");
         else
-        return answerDao.deleteAnswer(answerToBeDeleted);
+            return answerDao.deleteAnswer(answerToBeDeleted);
     }
 
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public List<AnswerEntity>getAllAnswersToQuestion(final String question_uuid,final String authorisation) throws AuthorizationFailedException, InvalidQuestionException {
+    public List<AnswerEntity> getAllAnswersToQuestion(final String question_uuid, final String authorisation) throws AuthorizationFailedException, InvalidQuestionException {
 
         UserAuthTokenEntity userAuthTokenEntity = userDao.getUserAuthToken(authorisation);
         if (userAuthTokenEntity == null) {
@@ -127,8 +127,8 @@ public class AnswerBusinessService {
         if (question == null)
             throw new InvalidQuestionException("QUES-001", "The question entered is invalid");
 
-         List<AnswerEntity> getAllAnswers=answerDao.getAllAnswersToQuestion(question_uuid);
-         return getAllAnswers;
+        List<AnswerEntity> getAllAnswers = answerDao.getAllAnswersToQuestion(question_uuid);
+        return getAllAnswers;
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
