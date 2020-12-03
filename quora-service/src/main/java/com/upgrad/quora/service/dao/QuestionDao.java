@@ -45,14 +45,6 @@ public class QuestionDao {
         return allQuestions;
     }
 
-    public QuestionEntity getQuestion(String uuid) {
-        try {
-            return entityManager.createNamedQuery("questionByID", QuestionEntity.class).setParameter("uuid", uuid).getSingleResult();
-        } catch (NoResultException nre) {
-            return null;
-        }
-    }
-
     public void deleteQuestion(QuestionEntity questionEntity) {
         entityManager.remove(questionEntity);
     }

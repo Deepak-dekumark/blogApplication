@@ -30,7 +30,7 @@ public class AdminBusinessService {
             throw new AuthorizationFailedException("ATHR-003", "Unauthorized Access, Entered user is not an admin");
         }
 
-        UserEntity userEntity = userDao.userDelete(userUuid);
+        UserEntity userEntity = userDao.deleteUser(userUuid);
         if (userEntity == null) {
             throw new UserNotFoundException("USR-001", "User with entered uuid to be deleted does not exist");
         } else {

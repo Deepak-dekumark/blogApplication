@@ -75,7 +75,7 @@ public class QuestionBusinessService {
             throw new AuthorizationFailedException("ATHR-002",
                     "User is signed out.Sign in first to edit the question");
         }
-        QuestionEntity questionEntity = questionDao.getQuestion(questionID);
+        QuestionEntity questionEntity = questionDao.getQuestionByuuid(questionID);
         if (questionEntity == null) {
             throw new InvalidQuestionException("QUES-001", "Entered question uuid does not exist");
         }
@@ -101,7 +101,7 @@ public class QuestionBusinessService {
             throw new AuthorizationFailedException("ATHR-002",
                     "User is signed out.Sign in first to delete the question");
         }
-        QuestionEntity questionEntity = questionDao.getQuestion(questionID);
+        QuestionEntity questionEntity = questionDao.getQuestionByuuid(questionID);
         if (questionEntity == null) {
             throw new InvalidQuestionException("QUES-001", "Entered question uuid does not exist");
         }
@@ -127,7 +127,7 @@ public class QuestionBusinessService {
                     "User is signed out.Sign in first to post a question.");
         }
 
-        UserEntity userEntity = userDao.getUser(userUuid);
+        UserEntity userEntity = userDao.getUserByUuid(userUuid);
 
         if (userEntity == null) {
             throw new UserNotFoundException("USR-001",
