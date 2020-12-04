@@ -34,7 +34,7 @@ public class QuestionBusinessService {
         if (userAuthTokenEntity == null) {
             throw new AuthorizationFailedException("ATHR-001", "User has not signed in.");
         } else if (userAuthTokenEntity.getLogoutAt() != null || userAuthTokenEntity.getExpiresAt()
-                .isAfter(ZonedDateTime.now())) {
+                .isBefore(ZonedDateTime.now())) {
             throw new AuthorizationFailedException("ATHR-002",
                     "User is signed out.Sign in first to post a question.");
         }
@@ -54,9 +54,9 @@ public class QuestionBusinessService {
         if (userAuthTokenEntity == null) {
             throw new AuthorizationFailedException("ATHR-001", "User has not signed in.");
         } else if (userAuthTokenEntity.getLogoutAt() != null || userAuthTokenEntity.getExpiresAt()
-                .isAfter(ZonedDateTime.now())) {
+                .isBefore(ZonedDateTime.now())) {
             throw new AuthorizationFailedException("ATHR-002",
-                    "User is signed out.Sign in first to post a question.");
+                    "User is signed out.Sign in first to get all questions");
         }
 
         List<QuestionEntity> allQuestions = questionDao.getAllQuestions();
@@ -80,7 +80,7 @@ public class QuestionBusinessService {
             throw new InvalidQuestionException("QUES-001", "Entered question uuid does not exist");
         }
         UserEntity userEntity = userAuthTokenEntity.getUser();
-        if (!questionEntity.getUser().equals(userEntity)) {
+        if (!questionEntity.getUser().getUuid().equals(userEntity.getUuid())) {
             throw new AuthorizationFailedException("ATHR-003", "Only the question owner can edit the question");
         }
 
@@ -106,8 +106,8 @@ public class QuestionBusinessService {
             throw new InvalidQuestionException("QUES-001", "Entered question uuid does not exist");
         }
         UserEntity userEntity = userAuthTokenEntity.getUser();
-        if (!questionEntity.getUser().equals(userEntity)) {
-            throw new AuthorizationFailedException("ATHR-003", "Only the question owner can delete the question");
+        if (!questionEntity.getUser().getUuid().equals(userEntity.getUuid())&&userEntity.getRole().equals("nonadmin")) {
+            throw new AuthorizationFailedException("ATHR-003", "Only the question owner or admin can delete the question");
         }
 
         questionDao.deleteQuestion(questionEntity);

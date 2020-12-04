@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
@@ -16,9 +15,7 @@ public class QuestionDao {
     private EntityManager entityManager;
 
     public List<QuestionEntity> getAllQuestionsByUser(UserEntity user) {
-        TypedQuery<QuestionEntity> query = entityManager.createQuery("SELECT q FROM QuestionEntity q WHERE q.user=:user", QuestionEntity.class);
-        query.setParameter("user", user);
-        List<QuestionEntity> allQuestions = query.getResultList();
+        List<QuestionEntity> allQuestions  = entityManager.createNamedQuery("getAllQuestionsByUser", QuestionEntity.class).setParameter("user", user).getResultList();
         return allQuestions;
     }
 
@@ -40,8 +37,7 @@ public class QuestionDao {
     }
 
     public List<QuestionEntity> getAllQuestions(){
-        TypedQuery<QuestionEntity> query = entityManager.createQuery("SELECT q FROM QuestionEntity q", QuestionEntity.class);
-        List<QuestionEntity> allQuestions = query.getResultList();
+        List<QuestionEntity> allQuestions = entityManager.createNamedQuery("getAllQuestion", QuestionEntity.class).getResultList();
         return allQuestions;
     }
 
