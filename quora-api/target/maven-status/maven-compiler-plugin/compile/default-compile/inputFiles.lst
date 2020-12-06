@@ -9,6 +9,7 @@ C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\gener
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\io\swagger\api\ApiException.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\src\main\java\com\upgrad\quora\api\config\SwaggerConfiguration.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\io\swagger\configuration\SwaggerDocumentationConfig.java
+C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\src\main\java\com\upgrad\quora\api\controller\CommonController.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\src\main\java\com\upgrad\quora\api\controller\AnswerController.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\io\swagger\api\ApiOriginFilter.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\io\swagger\api\ApiResponseMessage.java
@@ -28,6 +29,7 @@ C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\gener
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\com\upgrad\quora\api\model\AnswerEditResponse.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\com\upgrad\quora\api\model\SigninResponse.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\io\swagger\api\NotFoundException.java
+C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\src\main\java\com\upgrad\quora\api\controller\AdminController.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\com\upgrad\quora\api\model\SignupUserRequest.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\src\main\java\com\upgrad\quora\api\exception\RestExceptionHandler.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-api\target\generated-sources\.\io\swagger\RFC3339DateFormat.java

@@ -26,9 +26,8 @@ public class QuestionController {
     @Autowired
     private QuestionBusinessService questionBusinessService;
 
-    @RequestMapping(method = RequestMethod.POST,
+    @RequestMapping(method = RequestMethod.GET,
             path = "question/all/{userId}",
-            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<List<QuestionDetailsResponse>> getAllQuestionsByUser(@PathVariable("userId") final String userUuid,
                                                                                @RequestHeader("authorization") final String authorization)

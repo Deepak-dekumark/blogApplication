@@ -124,7 +124,7 @@ public class QuestionBusinessService {
         } else if (userAuthTokenEntity.getLogoutAt() != null || userAuthTokenEntity.getExpiresAt()
                 .isBefore(ZonedDateTime.now())) {
             throw new AuthorizationFailedException("ATHR-002",
-                    "User is signed out.Sign in first to post a question.");
+                    "User is signed out.Sign in first to get all questions posted by a specific user");
         }
 
         UserEntity userEntity = userDao.getUserByUuid(userUuid);

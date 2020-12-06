@@ -1,28 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.upgrad.quora.api.controller.AnswerControllerTest
 -------------------------------------------------------------------------------
-Tests run: 14, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 35.384 s <<< FAILURE! - in com.upgrad.quora.api.controller.AnswerControllerTest
-getAllAnswersToNonExistingQuestion(com.upgrad.quora.api.controller.AnswerControllerTest)  Time elapsed: 0.231 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<404> but was:<403>
-	at com.upgrad.quora.api.controller.AnswerControllerTest.getAllAnswersToNonExistingQuestion(AnswerControllerTest.java:135)
-
-createAnswerForNonExistingQuestion(com.upgrad.quora.api.controller.AnswerControllerTest)  Time elapsed: 0.638 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<404> but was:<403>
-	at com.upgrad.quora.api.controller.AnswerControllerTest.createAnswerForNonExistingQuestion(AnswerControllerTest.java:47)
-
-deleteAnswerWithoutOwnership(com.upgrad.quora.api.controller.AnswerControllerTest)  Time elapsed: 0.588 s  <<< FAILURE!
-java.lang.AssertionError: JSON path "code" expected:<ATHR-003> but was:<ATHR-002>
-	at com.upgrad.quora.api.controller.AnswerControllerTest.deleteAnswerWithoutOwnership(AnswerControllerTest.java:112)
-
-deleteNonExistingAnswer(com.upgrad.quora.api.controller.AnswerControllerTest)  Time elapsed: 1.56 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<404> but was:<403>
-	at com.upgrad.quora.api.controller.AnswerControllerTest.deleteNonExistingAnswer(AnswerControllerTest.java:103)
-
-editAnswerWithoutOwnership(com.upgrad.quora.api.controller.AnswerControllerTest)  Time elapsed: 1.136 s  <<< FAILURE!
-java.lang.AssertionError: JSON path "code" expected:<ATHR-003> but was:<ATHR-002>
-	at com.upgrad.quora.api.controller.AnswerControllerTest.editAnswerWithoutOwnership(AnswerControllerTest.java:80)
-
-editNonExistingAnswer(com.upgrad.quora.api.controller.AnswerControllerTest)  Time elapsed: 1.977 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<404> but was:<403>
-	at com.upgrad.quora.api.controller.AnswerControllerTest.editNonExistingAnswer(AnswerControllerTest.java:71)
-
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.248 s - in com.upgrad.quora.api.controller.AnswerControllerTest

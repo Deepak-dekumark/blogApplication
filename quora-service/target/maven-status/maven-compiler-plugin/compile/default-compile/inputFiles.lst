@@ -13,8 +13,10 @@ C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\exception\InvalidQuestionException.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\business\AnswerBusinessService.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\exception\AuthorizationFailedException.java
+C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\business\UserProfileBusinessService.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\business\JwtTokenProvider.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\business\SignOutBusinessService.java
+C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\business\AdminBusinessService.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\dao\AnswerDao.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\business\PasswordCryptographyProvider.java
 C:\Users\Shubham Kumar\Desktop\Quora Project\Trello_quora\quora-service\src\main\java\com\upgrad\quora\service\business\QuestionBusinessService.java
